@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div.id-data {border-style: solid;}
+    </style>
+</head>
+<body>
+    <h1><%=mess%></h1>
+    <div class="id-data">
+        <h2>Registered Data</h2>
+        <label>Name: </label><%= data.name %><br>
+        <label>Breed: </label><%= data.breed %><br>
+        <label>Sex: </label><%= data.sex %><br><br>
+        <a href="/delete/<%=data.id%>">Delete | </a>
+        <a href="/edit-form/<%=data.id%>">Edit | </a>
+    </div>
+    <br><hr>
+    <a href="/">Home | </a>
+    <a href="/reg-form">Register Another Pet | </a>
+    <a href="/pet-list">Registered Pets | </a>
+
+</body>
+</html>

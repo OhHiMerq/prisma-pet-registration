@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%const male = values.sex === 'male'? 'selected':''
+    const female = values.sex === 'female'? 'selected':''
+    %>
+    <h2><%=mess%></h2>
+    <form action="<%=action%>" method="POST">
+        <label>Name: </label>
+        <input type="text" name="name" value="<%=values.name%>"><br>
+        <label>Breed: </label>
+        <input type="text" name="breed" value="<%=values.breed%>"><br>
+        <label>Sex: </label>
+        <select name="sex" value="<%=values.sex%>">
+            <option value="male" <%=male%>>Male</option>
+            <option value="female" <%=female%>>Female</option>
+        </select><br>
+        <button>Submit</button>
+    </form>
+    <hr>
+    <a href="/">Home | </a>
+</body>
+</html>
