@@ -3,10 +3,7 @@ import {PrismaClient} from '@prisma/client'
 
 const prisma = new PrismaClient();
 
-export const postRouter = express.Router()
-
-
-postRouter.post("/submit-reg-form", async (req:Request,res: Response) => {
+export const submitRegForm = async (req:Request,res: Response) => {
     const {name,breed,sex} = req.body;
     const user = await prisma.user.create({
         data:{
@@ -17,9 +14,9 @@ postRouter.post("/submit-reg-form", async (req:Request,res: Response) => {
     })
     // res.json(user);
     res.render('sum-info',{data:user,mess:'Registered Successfully!'});
-})
+}
 
-postRouter.post("/submit-edit-form/:id", async (req:Request,res: Response) => {
+export const submitEditForm = async (req:Request,res: Response) => {
     const id = req.params.id;
     const {name,breed,sex} = req.body;
     const updatedUser = await prisma.user.update({
@@ -33,4 +30,4 @@ postRouter.post("/submit-edit-form/:id", async (req:Request,res: Response) => {
         }
     });
     res.render('sum-info',{data:updatedUser,mess:'Editted Successfully!'});
-})
+}
